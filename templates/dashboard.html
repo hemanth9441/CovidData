@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 Dashboard</title>
+    <!-- Include Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h1>COVID-19 Dashboard</h1>
+    
+    <!-- Total Cases Plot -->
+    <div id="total-cases-plot"></div>
+    
+    <!-- Total Deaths Plot -->
+    <div id="total-deaths-plot"></div>
+
+    <script>
+        // Convert Plotly plots from HTML strings to JavaScript objects
+        var totalCasesPlot = '{{ total_cases|safe }}';
+        var totalDeathsPlot = '{{ total_deaths|safe }}';
+
+        // Render Plotly plots
+        document.getElementById('total-cases-plot').innerHTML = totalCasesPlot;
+        document.getElementById('total-deaths-plot').innerHTML = totalDeathsPlot;
+    </script>
+</body>
+</html>
